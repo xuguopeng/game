@@ -4,7 +4,7 @@ export interface Game {
   description: string;
   category: string[];
   tags: string[];
-  thumbnail: string;
+  thumbnail?: string;
   emoji?: string;
   url: string;
 }
