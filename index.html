@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="在线免费小游戏合集 - 无需下载，点开即玩。精选15+款开源HTML5小游戏，涵盖益智、动作、射击、策略等多种类型。" />
+  <meta name="keywords" content="在线游戏,免费游戏,HTML5游戏,网页游戏,小游戏,益智游戏,射击游戏,动作游戏,策略游戏,无需下载,浏览器游戏,2048,俄罗斯方块,太空射击,赛车" />
+  <meta name="author" content="GameHub" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GameHub - 免费在线小游戏合集 | 15+款精选HTML5游戏" />
+  <meta property="og:description" content="精选开源HTML5小游戏，无需下载，点开即玩。" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="GameHub - 免费在线小游戏合集" />
+  <link rel="canonical" href="https://yourusername.github.io/gamesite/" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>GameHub - 免费在线小游戏 | 无需下载 点开即玩</title>
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title">GameHub</h1>
+    <p class="site-subtitle">15+款精选开源HTML5小游戏，点开即玩</p>
+  </header>
+  <nav class="nav-bar">
+    <button class="nav-btn active" data-category="all">全部</button>
+    <button class="nav-btn" data-category="puzzle">益智</button>
+    <button class="nav-btn" data-category="action">动作</button>
+    <button class="nav-btn" data-category="shooting">射击</button>
+    <button class="nav-btn" data-category="racing">赛车</button>
+    <button class="nav-btn" data-category="strategy">策略</button>
+    <button class="nav-btn" data-category="board">棋类</button>
+  </nav>
+  <div class="search-wrap">
+    <input type="text" class="search-input" id="searchInput" placeholder="搜索游戏..." />
+  </div>
+  <main class="game-grid" id="gameGrid">
+    <a href="games/2048/index.html" class="game-card" data-categories="puzzle">
+      <div class="game-thumbnail"><img src="assets/thumbnails/2048.png" alt="2048" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">2048</div><div class="game-desc">滑动方块合并数字，经典益智游戏。</div><div class="game-tags"><span class="game-tag">益智</span><span class="game-tag">数字</span></div></div>
+    </a>
+    <a href="games/HexGL/index.html" class="game-card" data-categories="racing">
+      <div class="game-thumbnail"><img src="assets/thumbnails/hexgl.png" alt="HexGL" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">HexGL</div><div class="game-desc">WebGL科幻赛车，画面惊艳。</div><div class="game-tags"><span class="game-tag">赛车</span><span class="game-tag">WebGL</span></div></div>
+    </a>
+    <a href="games/clumsy-bird/index.html" class="game-card" data-categories="action">
+      <div class="game-thumbnail"><img src="assets/thumbnails/clumsy-bird.png" alt="Clumsy Bird" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Clumsy Bird</div><div class="game-desc">Flappy Bird复刻，点击躲避管道。</div><div class="game-tags"><span class="game-tag action">动作</span><span class="game-tag">平台</span></div></div>
+    </a>
+    <a href="games/blockrain/index.html" class="game-card" data-categories="puzzle">
+      <div class="game-thumbnail"><img src="assets/thumbnails/blockrain.png" alt="Blockrain" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Blockrain</div><div class="game-desc">经典俄罗斯方块，支持触屏键盘。</div><div class="game-tags"><span class="game-tag">益智</span><span class="game-tag">经典</span></div></div>
+    </a>
+    <a href="games/space-shooter/index.html" class="game-card" data-categories="shooting">
+      <div class="game-thumbnail"><img src="assets/thumbnails/space-shooter.png" alt="Space Shooter" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Space Shooter</div><div class="game-desc">太空射击，操控飞船击败外星入侵者。</div><div class="game-tags"><span class="game-tag action">射击</span><span class="game-tag">街机</span></div></div>
+    </a>
+    <a href="games/asteroids/index.html" class="game-card" data-categories="shooting">
+      <div class="game-thumbnail"><img src="assets/thumbnails/asteroids.png" alt="Asteroids" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Asteroids</div><div class="game-desc">操控飞船穿越小行星带射击陨石。</div><div class="game-tags"><span class="game-tag action">射击</span><span class="game-tag">街机</span></div></div>
+    </a>
+    <a href="games/alien-invasion/index.html" class="game-card" data-categories="shooting">
+      <div class="game-thumbnail"><img src="assets/thumbnails/alien-invasion.png" alt="Alien Invasion" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Alien Invasion</div><div class="game-desc">复古像素风太空入侵者，保卫基地。</div><div class="game-tags"><span class="game-tag action">射击</span><span class="game-tag">复古</span></div></div>
+    </a>
+    <a href="games/survivor/index.html" class="game-card" data-categories="shooting">
+      <div class="game-thumbnail"><img src="assets/thumbnails/survivor.png" alt="Survivor" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Survivor</div><div class="game-desc">经典太空射击重制版，带关卡编辑器。</div><div class="game-tags"><span class="game-tag action">射击</span><span class="game-tag">生存</span></div></div>
+    </a>
+    <a href="games/onslaught-arena/index.html" class="game-card" data-categories="shooting">
+      <div class="game-thumbnail"><img src="assets/thumbnails/space-shooter.png" alt="Onslaught Arena" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Onslaught! Arena</div><div class="game-desc">中世纪怪物浪潮射击，快节奏街机风。</div><div class="game-tags"><span class="game-tag action">射击</span><span class="game-tag">地牢</span></div></div>
+    </a>
+    <a href="games/jolly-jumper/index.html" class="game-card" data-categories="action">
+      <div class="game-thumbnail"><img src="assets/thumbnails/jolly-jumper.png" alt="Jolly Jumper" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Jolly Jumper</div><div class="game-desc">2D平台跳跃，收集金币向上攀升。</div><div class="game-tags"><span class="game-tag action">动作</span><span class="game-tag">平台</span></div></div>
+    </a>
+    <a href="games/c4/browser/index.html" class="game-card" data-categories="board">
+      <div class="game-thumbnail"><img src="assets/thumbnails/c4.png" alt="Connect Four" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Connect Four</div><div class="game-desc">四子连珠棋，人机对弈或双人对战。</div><div class="game-tags"><span class="game-tag">棋类</span><span class="game-tag">双人</span></div></div>
+    </a>
+    <a href="games/sudoku-js/sudoku.html" class="game-card" data-categories="puzzle">
+      <div class="game-thumbnail"><img src="assets/thumbnails/sudoku-js.png" alt="Sudoku" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Sudoku</div><div class="game-desc">经典数独，锻炼逻辑思维。</div><div class="game-tags"><span class="game-tag">益智</span><span class="game-tag">逻辑</span></div></div>
+    </a>
+    <a href="games/astray/index.html" class="game-card" data-categories="puzzle">
+      <div class="game-thumbnail"><img src="assets/thumbnails/astray.png" alt="Astray" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Astray</div><div class="game-desc">3D迷宫解谜，操控球体滚出迷宫。</div><div class="game-tags"><span class="game-tag">益智</span><span class="game-tag">3D迷宫</span></div></div>
+    </a>
+    <a href="games/tower-defense/index.html" class="game-card" data-categories="strategy">
+      <div class="game-thumbnail"><img src="assets/thumbnails/tower-defense.png" alt="Tower Defense" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Tower Defense</div><div class="game-desc">经典塔防策略，建造防御塔抵御敌人。</div><div class="game-tags"><span class="game-tag strategy">策略</span><span class="game-tag">塔防</span></div></div>
+    </a>
+    <a href="games/last-colony/index.html" class="game-card" data-categories="strategy">
+      <div class="game-thumbnail"><img src="assets/thumbnails/last-colony.png" alt="Last Colony" loading="lazy"/></div>
+      <div class="game-info"><div class="game-title">Last Colony</div><div class="game-desc">太空RTS，建设基地指挥舰队战斗。</div><div class="game-tags"><span class="game-tag strategy">策略</span><span class="game-tag">RTS</span></div></div>
+    </a>
+    <a href="games/pop-pop-win/web/index.html" class="game-card" data-categories="puzzle">
+      <div class="game-thumbnail"><div class="emoji-fallback">💣</div></div>
+      <div class="game-info"><div class="game-title">Pop Pop Win</div><div class="game-desc">扫雷解谜，翻开方块找出隐藏地雷。</div><div class="game-tags"><span class="game-tag">益智</span><span class="game-tag">解谜</span></div></div>
+    </a>
+  </main>
+  <footer class="site-footer">
+    <p>GameHub - 基于开源游戏构建 · 仅供学习交流</p>
+    <p style="margin-top:6px;font-size:12px;">本站所有游戏资源均来自GitHub开源项目，遵循各自开源许可证</p>
+  </footer>
+  <script>
+  (function(){
+    var btns=document.querySelectorAll('.nav-btn'),cards=document.querySelectorAll('.game-card'),input=document.getElementById('searchInput');
+    btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.classList.remove('active')});b.classList.add('active');f()});});
+    input.addEventListener('input',f);
+    function f(){
+      var cat=document.querySelector('.nav-btn.active').dataset.category,term=input.value.toLowerCase().trim();
+      cards.forEach(function(c){
+        var cats=c.dataset.categories,title=c.querySelector('.game-title').textContent.toLowerCase(),desc=c.querySelector('.game-desc').textContent.toLowerCase();
+        var tags=Array.from(c.querySelectorAll('.game-tag')).map(function(t){return t.textContent.toLowerCase();});
+        var cm=cat==='all'||cats.indexOf(cat)!==-1;var sm=!term||title.indexOf(term)!==-1||desc.indexOf(term)!==-1||tags.some(function(t){return t.indexOf(term)!==-1;});
+        c.classList.toggle('hidden',!(cm&&sm));
+      });
+    }
+  })();
+  </script>
+<script defer src="https://visit.xuguopeng.com/tracker.min.js" data-website-id="gamehub"></script>
+</body>
+</html>
