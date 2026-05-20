@@ -1,0 +1,167 @@
+export interface Game {
+  id: string;
+  title: string;
+  description: string;
+  category: string[];
+  tags: string[];
+  thumbnail: string;
+  emoji?: string;
+  url: string;
+}
+
+export const games: Game[] = [
+  {
+    id: '2048',
+    title: '2048',
+    description: '滑动方块合并数字，经典益智游戏。',
+    category: ['puzzle'],
+    tags: ['益智', '数字'],
+    thumbnail: '/assets/thumbnails/2048.png',
+    url: '/games/2048/index.html',
+  },
+  {
+    id: 'hexgl',
+    title: 'HexGL',
+    description: 'WebGL科幻赛车，画面惊艳，速度感十足。',
+    category: ['racing'],
+    tags: ['赛车', 'WebGL'],
+    thumbnail: '/assets/thumbnails/hexgl.png',
+    url: '/games/HexGL/index.html',
+  },
+  {
+    id: 'clumsy-bird',
+    title: 'Clumsy Bird',
+    description: 'Flappy Bird复刻，点击躲避管道障碍。',
+    category: ['action'],
+    tags: ['动作', '平台'],
+    thumbnail: '/assets/thumbnails/clumsy-bird.png',
+    url: '/games/clumsy-bird/index.html',
+  },
+  {
+    id: 'blockrain',
+    title: 'Blockrain',
+    description: '经典俄罗斯方块，支持触屏和键盘操作。',
+    category: ['puzzle'],
+    tags: ['益智', '经典'],
+    thumbnail: '/assets/thumbnails/blockrain.png',
+    url: '/games/blockrain/index.html',
+  },
+  {
+    id: 'space-shooter',
+    title: 'Space Shooter',
+    description: '太空射击，操控飞船击败外星入侵者。',
+    category: ['shooting'],
+    tags: ['射击', '街机'],
+    thumbnail: '/assets/thumbnails/space-shooter.png',
+    url: '/games/space-shooter/index.html',
+  },
+  {
+    id: 'asteroids',
+    title: 'Asteroids',
+    description: '操控飞船穿越小行星带射击陨石。',
+    category: ['shooting'],
+    tags: ['射击', '街机'],
+    thumbnail: '/assets/thumbnails/asteroids.png',
+    url: '/games/asteroids/index.html',
+  },
+  {
+    id: 'alien-invasion',
+    title: 'Alien Invasion',
+    description: '复古像素风太空入侵者，保卫基地。',
+    category: ['shooting'],
+    tags: ['射击', '复古'],
+    thumbnail: '/assets/thumbnails/alien-invasion.png',
+    url: '/games/alien-invasion/index.html',
+  },
+  {
+    id: 'survivor',
+    title: 'Survivor',
+    description: '经典太空射击重制版，带关卡编辑器。',
+    category: ['shooting'],
+    tags: ['射击', '生存'],
+    thumbnail: '/assets/thumbnails/survivor.png',
+    url: '/games/survivor/index.html',
+  },
+  {
+    id: 'onslaught-arena',
+    title: 'Onslaught! Arena',
+    description: '中世纪怪物浪潮射击，快节奏街机风。',
+    category: ['shooting'],
+    tags: ['射击', '地牢'],
+    thumbnail: '/assets/thumbnails/space-shooter.png',
+    url: '/games/onslaught-arena/index.html',
+  },
+  {
+    id: 'jolly-jumper',
+    title: 'Jolly Jumper',
+    description: '2D平台跳跃，收集金币向上攀升。',
+    category: ['action'],
+    tags: ['动作', '平台'],
+    thumbnail: '/assets/thumbnails/jolly-jumper.png',
+    url: '/games/jolly-jumper/index.html',
+  },
+  {
+    id: 'c4',
+    title: 'Connect Four',
+    description: '四子连珠棋，人机对弈或双人对战。',
+    category: ['board'],
+    tags: ['棋类', '双人'],
+    thumbnail: '/assets/thumbnails/c4.png',
+    url: '/games/c4/browser/index.html',
+  },
+  {
+    id: 'sudoku',
+    title: 'Sudoku',
+    description: '经典数独，锻炼逻辑思维。',
+    category: ['puzzle'],
+    tags: ['益智', '逻辑'],
+    thumbnail: '/assets/thumbnails/sudoku-js.png',
+    url: '/games/sudoku-js/sudoku.html',
+  },
+  {
+    id: 'astray',
+    title: 'Astray',
+    description: '3D迷宫解谜，操控球体滚出迷宫。',
+    category: ['puzzle'],
+    tags: ['益智', '3D迷宫'],
+    thumbnail: '/assets/thumbnails/astray.png',
+    url: '/games/astray/index.html',
+  },
+  {
+    id: 'tower-defense',
+    title: 'Tower Defense',
+    description: '经典塔防策略，建造防御塔抵御敌人。',
+    category: ['strategy'],
+    tags: ['策略', '塔防'],
+    thumbnail: '/assets/thumbnails/tower-defense.png',
+    url: '/games/tower-defense/index.html',
+  },
+  {
+    id: 'last-colony',
+    title: 'Last Colony',
+    description: '太空RTS，建设基地指挥舰队战斗。',
+    category: ['strategy'],
+    tags: ['策略', 'RTS'],
+    thumbnail: '/assets/thumbnails/last-colony.png',
+    url: '/games/last-colony/index.html',
+  },
+  {
+    id: 'pop-pop-win',
+    title: 'Pop Pop Win',
+    description: '扫雷解谜，翻开方块找出隐藏地雷。',
+    category: ['puzzle'],
+    tags: ['益智', '解谜'],
+    emoji: '💣',
+    url: '/games/pop-pop-win/web/index.html',
+  },
+];
+
+export const categories = [
+  { key: 'all', label: '全部' },
+  { key: 'puzzle', label: '益智' },
+  { key: 'action', label: '动作' },
+  { key: 'shooting', label: '射击' },
+  { key: 'racing', label: '赛车' },
+  { key: 'strategy', label: '策略' },
+  { key: 'board', label: '棋类' },
+];

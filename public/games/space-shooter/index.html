@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter</title>
+    <link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387922073151504" crossorigin="anonymous"></script>
+</head>
+<body><div class='gh-back-nav' style='position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);border-bottom:1px solid #2a2a2a;padding:10px 20px;display:flex;align-items:center;gap:10px;font-family:sans-serif;box-sizing:border-box;'><a href='../../index.html' style='color:#00f0ff;text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid rgba(0,240,255,0.3);border-radius:20px;transition:all 0.3s;'>← 返回 GameHub</a><span style='margin-left:auto;color:#777;font-size:13px;'>GameHub 免费小游戏</span></div><div style='height:48px;'></div>
+    <div class="game-container">
+        <h1>SPACE SHOOTER</h1>
+        
+        <!-- Game stats display -->
+        <div class="stats-panel">
+            <div class="stat">
+                <span class="label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Lives:</span>
+                <span id="lives">3</span>
+            </div>
+            <div class="stat">
+                <span class="label">Level:</span>
+                <span id="level">1</span>
+            </div>
+        </div>
+
+        <!-- Audio Settings Panel -->
+        <div class="audio-settings">
+            <div class="settings-header">
+                <span>🔊 Audio</span>
+                <button id="toggleSettings" class="settings-toggle">▼</button>
+            </div>
+            <div id="settingsPanel" class="settings-content">
+                <!-- Master Mute -->
+                <div class="setting-row">
+                    <label class="setting-label">
+                        <input type="checkbox" id="masterMute">
+                        Master Mute
+                    </label>
+                </div>
+                
+                <!-- SFX Controls -->
+                <div class="setting-row">
+                    <label class="setting-label">
+                        <input type="checkbox" id="sfxEnabled" checked>
+                        Sound FX
+                    </label>
+                </div>
+                <div class="setting-row slider-row">
+                    <label>SFX Volume</label>
+                    <input type="range" id="sfxVolume" min="0" max="100" value="70">
+                    <span id="sfxVolumeValue">70%</span>
+                </div>
+                
+                <!-- Music Controls -->
+                <div class="setting-row">
+                    <label class="setting-label">
+                        <input type="checkbox" id="musicEnabled" checked>
+                        Music
+                    </label>
+                </div>
+                <div class="setting-row slider-row">
+                    <label>Music Volume</label>
+                    <input type="range" id="musicVolume" min="0" max="100" value="50">
+                    <span id="musicVolumeValue">50%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio Unlock Overlay -->
+        <div id="audioUnlock" class="audio-unlock">
+            <div class="unlock-content">
+                <h3>🔊 Enable Audio</h3>
+                <p>Click anywhere or press any key to enable sound</p>
+                <button id="unlockBtn" class="btn">ENABLE AUDIO</button>
+            </div>
+        </div>
+
+        <!-- Game canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Game over screen -->
+        <div id="gameOver" class="game-over hidden">
+            <h2>GAME OVER</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn" class="btn">RESTART</button>
+        </div>
+
+        <!-- Start screen -->
+        <div id="startScreen" class="start-screen">
+            <h2>WELCOME TO SPACE SHOOTER</h2>
+            <div class="controls-info">
+                <p><strong>Controls:</strong></p>
+                <p>← → or A/D - Move</p>
+                <p>SPACEBAR - Shoot</p>
+            </div>
+            <button id="startBtn" class="btn">START GAME</button>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <p><strong>Mission:</strong> Destroy all enemies and survive as long as possible!</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+<script defer src="https://visit.xuguopeng.com/tracker.min.js" data-website-id="gamehub"></script>
+</body>
+</html>
