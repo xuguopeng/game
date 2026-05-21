@@ -1,31 +1,59 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { games, categories } from '@/data/games';
+import { publicGames, categories } from '@/data/games';
 import GameCard from '@/components/GameCard';
+import LanguageToggle from '@/components/LanguageToggle';
+import { useLanguage } from '@/i18n/useLanguage';
 
 export default function HomePage() {
+  const { language, setLanguage } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredGames = useMemo(() => {
     const term = searchTerm.toLowerCase().trim();
-    return games.filter((game) => {
+    return publicGames.filter((game) => {
       const catMatch = activeCategory === 'all' || game.category.includes(activeCategory);
       const searchMatch =
         !term ||
         game.title.toLowerCase().includes(term) ||
-        game.description.toLowerCase().includes(term) ||
-        game.tags.some((t) => t.toLowerCase().includes(term));
+        game.description[language].toLowerCase().includes(term) ||
+        game.tags.some((t) => t[language].toLowerCase().includes(term));
       return catMatch && searchMatch;
     });
-  }, [activeCategory, searchTerm]);
+  }, [activeCategory, searchTerm, language]);
+
+  const copy = {
+    zh: {
+      eyebrow: 'LICENSE-SAFE HTML5 ARCADE',
+      title: 'GameHub Arcade',
+      subtitle: '怀旧街机风 HTML5 小游戏，打开浏览器就能玩',
+      search: '搜索游戏...',
+      empty: '没有找到匹配的游戏',
+      footer: 'GameHub Arcade - 只展示许可证清楚、可商用友好的浏览器游戏',
+      footerNote: '广告审核前不加载 AdSense 脚本；每个游戏页保留来源和许可证信息。',
+    },
+    en: {
+      eyebrow: 'LICENSE-SAFE HTML5 ARCADE',
+      title: 'GameHub Arcade',
+      subtitle: 'Retro browser games you can play instantly',
+      search: 'Search games...',
+      empty: 'No matching games found',
+      footer: 'GameHub Arcade - browser games with clear commercial-friendly licenses',
+      footerNote: 'AdSense stays off before approval; each game page keeps source and license details.',
+    },
+  }[language];
 
   return (
     <>
       <header className="site-header">
-        <h1 className="site-title">GameHub</h1>
-        <p className="site-subtitle">15+款精选开源HTML5小游戏，点开即玩</p>
+        <div className="header-toolbar">
+          <span className="site-eyebrow">{copy.eyebrow}</span>
+          <LanguageToggle language={language} onChange={setLanguage} />
+        </div>
+        <h1 className="site-title">{copy.title}</h1>
+        <p className="site-subtitle">{copy.subtitle}</p>
       </header>
 
       <nav className="nav-bar">
@@ -35,7 +63,7 @@ export default function HomePage() {
             className={`nav-btn ${activeCategory === cat.key ? 'active' : ''}`}
             onClick={() => setActiveCategory(cat.key)}
           >
-            {cat.label}
+            {cat.label[language]}
           </button>
         ))}
       </nav>
@@ -44,32 +72,27 @@ export default function HomePage() {
         <input
           type="text"
           className="search-input"
-          placeholder="搜索游戏..."
+          placeholder={copy.search}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
 
-      <main className="game-grid">
+      <main id="games" className="game-grid">
         {filteredGames.map((game) => (
-          <GameCard key={game.id} game={game} />
+          <GameCard key={game.id} game={game} language={language} />
         ))}
         {filteredGames.length === 0 && (
           <div style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#777', padding: '60px 20px' }}>
-            没有找到匹配的游戏
+            {copy.empty}
           </div>
         )}
       </main>
 
-      {/* AdSense placeholder */}
-      <div className="ad-placeholder" style={{ margin: '20px auto', maxWidth: '1400px' }}>
-        Google AdSense 广告位（审核通过后替换此处）
-      </div>
-
       <footer className="site-footer">
-        <p>GameHub - 基于开源游戏构建 · 仅供学习交流</p>
+        <p>{copy.footer}</p>
         <p style={{ marginTop: 6, fontSize: 12 }}>
-          本站所有游戏资源均来自GitHub开源项目，遵循各自开源许可证
+          {copy.footerNote}
         </p>
       </footer>
     </>

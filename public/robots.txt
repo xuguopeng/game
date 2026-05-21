@@ -1,3 +1,9 @@
 Sitemap: https://yourusername.github.io/gamesite/sitemap.xml
 User-agent: *
 Allow: /
+Disallow: /games/clumsy-bird/
+Disallow: /games/survivor/
+Disallow: /games/jolly-jumper/
+Disallow: /games/onslaught-arena/
+Disallow: /games/astray/
+Disallow: /games/last-colony/
