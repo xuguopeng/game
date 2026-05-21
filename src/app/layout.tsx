@@ -29,6 +29,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387922073151504"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         {children}
         <script
