@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: 'Retro HTML5 games you can play instantly.',
   },
   alternates: {
-    canonical: 'https://yourusername.github.io/gamesite/',
+    canonical: 'https://game-blb.pages.dev/',
   },
 };
 

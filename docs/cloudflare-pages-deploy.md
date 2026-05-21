@@ -46,7 +46,7 @@ Cloudflare Pages 构建设置：
 | 变量名 | 值 | 说明 |
 | --- | --- | --- |
 | `NEXT_PUBLIC_ADS_ENABLED` | `false` | AdSense 审核前保持关闭 |
-| `NEXT_PUBLIC_SITE_URL` | 你的正式域名 | 例如 `https://example.com` |
+| `NEXT_PUBLIC_SITE_URL` | 你的正式域名 | 例如 `https://game-blb.pages.dev` |
 
 点击 **Save and Deploy** 后，Cloudflare 会自动执行构建并发布。
 

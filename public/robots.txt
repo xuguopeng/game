@@ -1,4 +1,4 @@
-Sitemap: https://yourusername.github.io/gamesite/sitemap.xml
+Sitemap: https://game-blb.pages.dev/sitemap.xml
 User-agent: *
 Allow: /
 Disallow: /games/clumsy-bird/
