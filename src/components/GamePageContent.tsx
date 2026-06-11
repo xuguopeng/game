@@ -44,6 +44,10 @@ export default function GamePageContent({ game }: GamePageContentProps) {
       history: '历史与背景',
       strategyGuide: '策略指南',
       glossary: '术语小词典',
+      navHome: '返回首页',
+      navGames: '全部游戏',
+      navAbout: '关于',
+      navContact: '联系',
     },
     en: {
       brand: 'GameHub Arcade',
@@ -72,18 +76,31 @@ export default function GamePageContent({ game }: GamePageContentProps) {
       history: 'History and Background',
       strategyGuide: 'Strategy Guide',
       glossary: 'Glossary',
+      navHome: 'Home',
+      navGames: 'All Games',
+      navAbout: 'About',
+      navContact: 'Contact',
     },
   }[language];
 
   return (
     <main className="game-page">
       <nav className="game-topbar">
-        <a href="/" className="brand-link">
+        <a href="/" className="brand-link" aria-label={copy.navHome}>
           {copy.brand}
         </a>
         <div className="topbar-actions">
-          <a href="/#games" className="topbar-link">
-            {copy.allGames}
+          <a href="/" className="topbar-link" title={copy.navHome}>
+            {copy.navHome}
+          </a>
+          <a href="/#games" className="topbar-link" title={copy.navGames}>
+            {copy.navGames}
+          </a>
+          <a href="/about/" className="topbar-link" title={copy.navAbout}>
+            {copy.navAbout}
+          </a>
+          <a href="/contact/" className="topbar-link" title={copy.navContact}>
+            {copy.navContact}
           </a>
           <LanguageToggle language={language} onChange={setLanguage} />
         </div>

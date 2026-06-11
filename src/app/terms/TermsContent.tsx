@@ -1,26 +1,16 @@
 'use client';
 
-import LanguageToggle from '@/components/LanguageToggle';
 import SiteFooter from '@/components/SiteFooter';
+import StaticPageHeader from '@/components/StaticPageHeader';
 import { useLanguage } from '@/i18n/useLanguage';
 
 export default function TermsContent() {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
   const isZh = language === 'zh';
 
   return (
     <div className="static-page">
-      <nav className="game-topbar">
-        <a href="/" className="brand-link">
-          GameHub Arcade
-        </a>
-        <div className="topbar-actions">
-          <a href="/" className="topbar-link">
-            {isZh ? '首页' : 'Home'}
-          </a>
-          <LanguageToggle language={language} onChange={setLanguage} />
-        </div>
-      </nav>
+      <StaticPageHeader activeKey="terms" />
 
       <main className="static-content">
         <h1>{isZh ? '服务条款' : 'Terms of Service'}</h1>

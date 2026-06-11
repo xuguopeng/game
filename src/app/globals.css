@@ -601,7 +601,6 @@ html, body {
   margin: 0;
 }
 
-/* ===== Breadcrumb ===== */
 .breadcrumb {
   max-width: 1480px;
   margin: 14px auto 0;
@@ -635,6 +634,32 @@ html, body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.topbar-link-active {
+  color: var(--accent-yellow) !important;
+  position: relative;
+}
+
+.topbar-link-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: var(--accent-yellow);
+  border-radius: 2px;
+}
+
+@media (max-width: 720px) {
+  .topbar-actions {
+    gap: 8px;
+    font-size: 13px;
+  }
+  .topbar-link {
+    padding: 6px 4px;
+  }
 }
 
 /* ===== Static Pages (About / Privacy / Terms / Contact) ===== */

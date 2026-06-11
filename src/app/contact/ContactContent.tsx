@@ -1,26 +1,16 @@
 'use client';
 
-import LanguageToggle from '@/components/LanguageToggle';
 import SiteFooter from '@/components/SiteFooter';
+import StaticPageHeader from '@/components/StaticPageHeader';
 import { useLanguage } from '@/i18n/useLanguage';
 
 export default function ContactContent() {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
   const isZh = language === 'zh';
 
   return (
     <div className="static-page">
-      <nav className="game-topbar">
-        <a href="/" className="brand-link">
-          GameHub Arcade
-        </a>
-        <div className="topbar-actions">
-          <a href="/" className="topbar-link">
-            {isZh ? '首页' : 'Home'}
-          </a>
-          <LanguageToggle language={language} onChange={setLanguage} />
-        </div>
-      </nav>
+      <StaticPageHeader activeKey="contact" />
 
       <main className="static-content">
         <h1>{isZh ? '联系我们' : 'Contact Us'}</h1>
