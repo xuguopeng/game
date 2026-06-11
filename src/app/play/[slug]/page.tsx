@@ -38,6 +38,62 @@ export function generateMetadata({ params }: GamePageProps): Metadata {
   };
 }
 
+function buildGameJsonLd(slug: string) {
+  const game = getGameBySlug(slug);
+  if (!game) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: game.title,
+    description: game.description.en,
+    gamePlatform: ['Web Browser', 'HTML5'],
+    applicationCategory: 'Game',
+    operatingSystem: 'Any (modern browser)',
+    genre: game.tags.map((tag) => tag.en).join(', '),
+    playMode: 'SinglePlayer',
+    image: `https://game-blb.pages.dev${game.thumbnail ?? ''}`,
+    url: `https://game-blb.pages.dev/play/${game.slug}/`,
+    author: {
+      '@type': 'Person',
+      name: game.author ?? game.title,
+    },
+    license: game.licenseUrl ?? game.license,
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    inLanguage: ['zh-CN', 'en'],
+  };
+}
+
+function buildBreadcrumbJsonLd(slug: string, title: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://game-blb.pages.dev/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'All Games',
+        item: 'https://game-blb.pages.dev/#games',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: title,
+        item: `https://game-blb.pages.dev/play/${slug}/`,
+      },
+    ],
+  };
+}
+
 export default function GamePage({ params }: GamePageProps) {
   const game = getGameBySlug(params.slug);
 
@@ -45,5 +101,22 @@ export default function GamePage({ params }: GamePageProps) {
     notFound();
   }
 
-  return <GamePageContent game={game} />;
+  const jsonLd = buildGameJsonLd(params.slug);
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(game.slug, game.title);
+
+  return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <GamePageContent game={game} />
+    </>
+  );
 }

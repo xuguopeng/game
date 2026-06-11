@@ -3,6 +3,7 @@
 import AdSlot from '@/components/AdSlot';
 import GameFrame from '@/components/GameFrame';
 import LanguageToggle from '@/components/LanguageToggle';
+import SiteFooter from '@/components/SiteFooter';
 import type { Game } from '@/data/games';
 import { getRelatedGames } from '@/data/games';
 import { useLanguage } from '@/i18n/useLanguage';
@@ -37,6 +38,12 @@ export default function GamePageContent({ game }: GamePageContentProps) {
       faq: '常见问题',
       topAd: '顶部广告',
       sideAd: '侧边广告',
+      breadcrumbHome: '首页',
+      breadcrumbGames: '全部游戏',
+      breadcrumbCurrent: '正在玩',
+      history: '历史与背景',
+      strategyGuide: '策略指南',
+      glossary: '术语小词典',
     },
     en: {
       brand: 'GameHub Arcade',
@@ -59,6 +66,12 @@ export default function GamePageContent({ game }: GamePageContentProps) {
       faq: 'FAQ',
       topAd: 'Top ad',
       sideAd: 'Side ad',
+      breadcrumbHome: 'Home',
+      breadcrumbGames: 'Games',
+      breadcrumbCurrent: 'Now playing',
+      history: 'History and Background',
+      strategyGuide: 'Strategy Guide',
+      glossary: 'Glossary',
     },
   }[language];
 
@@ -184,6 +197,37 @@ export default function GamePageContent({ game }: GamePageContentProps) {
           </details>
         ))}
       </section>
+
+      <section className="game-content-grid">
+        <article className="content-panel history-panel">
+          <h2>{copy.history}</h2>
+          <p>{game.history[language]}</p>
+        </article>
+        <article className="content-panel">
+          <h2>{copy.strategyGuide}</h2>
+          <ol className="ordered-list">
+            {game.strategyGuide.map((item) => (
+              <li key={item.en}>{item[language]}</li>
+            ))}
+          </ol>
+        </article>
+      </section>
+
+      {game.glossary.length > 0 && (
+        <section className="content-panel glossary-panel">
+          <h2>{copy.glossary}</h2>
+          <dl className="glossary-list">
+            {game.glossary.map((item) => (
+              <div key={item.term.en} className="glossary-item">
+                <dt>{item.term[language]}</dt>
+                <dd>{item.definition[language]}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      <SiteFooter language={language} />
     </main>
   );
 }
