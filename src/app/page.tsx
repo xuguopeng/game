@@ -40,6 +40,11 @@ export default function HomePage() {
       subtitle: '怀旧街机风 HTML5 小游戏，打开浏览器就能玩',
       search: '搜索游戏...',
       empty: '没有找到匹配的游戏',
+      navHome: '首页',
+      navAbout: '关于',
+      navPrivacy: '隐私',
+      navTerms: '条款',
+      navContact: '联系',
       introTitle: '欢迎来到 GameHub Arcade',
       introBody: '我们精心挑选了一组许可证清晰、可商用的开源 HTML5 浏览器小游戏。所有游戏都无需下载、无需安装，打开网页即可畅玩。每款游戏都附带完整的玩法说明、操作指南和高分技巧。',
       featureCards: [
@@ -93,6 +98,11 @@ export default function HomePage() {
       subtitle: 'Retro browser games you can play instantly',
       search: 'Search games...',
       empty: 'No matching games found',
+      navHome: 'Home',
+      navAbout: 'About',
+      navPrivacy: 'Privacy',
+      navTerms: 'Terms',
+      navContact: 'Contact',
       introTitle: 'Welcome to GameHub Arcade',
       introBody: 'We have carefully curated a collection of open-source HTML5 browser games with clear, commercial-friendly licenses. No downloads, no installations — just open the page and play. Every game comes with detailed instructions, control guides, and high-score tips.',
       featureCards: [
@@ -147,6 +157,23 @@ export default function HomePage() {
       <header className="site-header">
         <div className="header-toolbar">
           <span className="site-eyebrow">{copy.eyebrow}</span>
+          <nav className="header-nav">
+            <a href="/" className="header-nav-link header-nav-link-active">
+              {copy.navHome}
+            </a>
+            <a href="/about/" className="header-nav-link">
+              {copy.navAbout}
+            </a>
+            <a href="/privacy/" className="header-nav-link">
+              {copy.navPrivacy}
+            </a>
+            <a href="/terms/" className="header-nav-link">
+              {copy.navTerms}
+            </a>
+            <a href="/contact/" className="header-nav-link">
+              {copy.navContact}
+            </a>
+          </nav>
           <LanguageToggle language={language} onChange={setLanguage} />
         </div>
         <h1 className="site-title">{copy.title}</h1>
